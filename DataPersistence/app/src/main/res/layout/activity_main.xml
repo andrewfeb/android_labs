@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Input Text"
+        android:id="@+id/tvInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtInput"
+        app:layout_constraintTop_toBottomOf="@id/tvInput"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSave"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtInput"
+        android:text="@string/save"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnShow"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toBottomOf="@id/edtInput"
+        app:layout_constraintStart_toEndOf="@id/btnSave"
+        android:text="@string/show_data"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnDelete"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toBottomOf="@id/edtInput"
+        app:layout_constraintStart_toEndOf="@id/btnShow"
+        android:text="@string/hapus_file"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSaveShared"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnSave"
+        android:text="@string/save_to_sp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnShowShared"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toBottomOf="@id/btnSave"
+        app:layout_constraintStart_toEndOf="@id/btnSaveShared"
+        android:text= "@string/show_from_sp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnClearShared"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toBottomOf="@id/btnSave"
+        app:layout_constraintStart_toEndOf="@id/btnShowShared"
+        android:text="Clear SP"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

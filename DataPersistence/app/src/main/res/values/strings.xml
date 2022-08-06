@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DataPersistence</string>
+    <string name="save">Save</string>
+    <string name="show_data">Show Data</string>
+    <string name="hapus_file">Hapus File</string>
+    <string name="save_to_sp">Save to SP</string>
+    <string name="show_from_sp">Show from SP</string>
+</resources>

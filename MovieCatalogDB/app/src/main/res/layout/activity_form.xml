@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".FormActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvTitle"
+        android:text="@string/title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtTitle"
+        android:focusable="true"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvReleaseYear"
+        android:text="@string/release_year"
+        app:layout_constraintTop_toBottomOf="@id/edtTitle"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtReleaseYear"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/tvReleaseYear"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvDescription"
+        android:text="Description"
+        app:layout_constraintTop_toBottomOf="@id/edtReleaseYear"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtDescription"
+        app:layout_constraintTop_toBottomOf="@id/tvDescription"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnUpload"
+        app:layout_constraintTop_toBottomOf="@id/edtDescription"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Upload Cover"/>
+
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/save"
+        app:layout_constraintTop_toBottomOf="@id/btnUpload"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCancel"
+        android:text="@string/cancel"
+        app:layout_constraintTop_toBottomOf="@id/btnUpload"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

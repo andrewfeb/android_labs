@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Movie Catalog DB</string>
+    <string name="cover_movie">Cover Movie</string>
+    <string name="about">About</string>
+    <string name="data_belum_ada">Data belum ada</string>
+    <string name="tambah">Tambah</string>
+    <string name="release_year">Release Year</string>
+    <string name="title">Title</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+</resources>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/angka_1"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtAngka1"
+        android:inputType="number"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/angka_2"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtAngka2"
+        android:inputType="number"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnTambah"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/plus" />
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnKurang"
+            android:layout_marginTop="12dp"
+            android:layout_toEndOf="@id/btnTambah"
+            android:layout_marginStart="12dp"
+            android:text="@string/divide"/>
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnKali"
+            android:layout_marginTop="12dp"
+            android:layout_toEndOf="@id/btnKurang"
+            android:layout_marginStart="12dp"
+            android:text="@string/kali"/>
+
+        <Button
+            android:id="@+id/btnBagi"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_toEndOf="@id/btnKali"
+            android:text="@string/bagi" />
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hasil"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvHasil"/>
+</LinearLayout>
