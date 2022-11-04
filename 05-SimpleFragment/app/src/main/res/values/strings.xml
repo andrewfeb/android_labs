@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Simple Fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="chats_fragment">Chats fragment</string>
+    <string name="calls_fragment">Calls Fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="search_fragment">Search fragment</string>
+    <string name="chats">Chats</string>
+    <string name="calls">Calls</string>
+    <string name="search">Search</string>
+</resources>

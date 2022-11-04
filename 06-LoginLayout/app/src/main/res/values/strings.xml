@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="fullname">Fullname</string>
+    <string name="address">Address</string>
+    <string name="register">Register</string>
+    <string name="training_development_android_apps">Training Development Android Apps</string>
+    <string name="about_course">About Course</string>
+</resources>

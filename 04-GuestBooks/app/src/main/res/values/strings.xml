@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Guest Books</string>
+    <string name="name">Name</string>
+    <string name="entry_the_name">Entry the name</string>
+    <string name="entry_the_email">Entry the email</string>
+    <string name="phone">Phone</string>
+    <string name="email">Email</string>
+    <string name="entry_the_phone">Entry the phone</string>
+    <string name="button_detail_name_1">Show Detail\n(intent extra)</string>
+    <string name="button_detail_name_2">Show Detail\n(Parcelable)</string>
+    <string name="github">Go to My Github</string>
+    <string name="result_activity">Result Activity</string>
+</resources>
