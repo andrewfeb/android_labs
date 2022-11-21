@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Retrofit</string>
+    <string name="avatar">Avatar</string>
+    <string name="add">Add</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="update">Update</string>
+    <string name="cancel">Cancel</string>
+    <string name="email">Email</string>
+    <string name="save">Save</string>
+    <string name="entry_first_name">Entry first name</string>
+    <string name="entry_last_name">Entry last name</string>
+    <string name="entry_email_address">Entry email address</string>
+</resources>
