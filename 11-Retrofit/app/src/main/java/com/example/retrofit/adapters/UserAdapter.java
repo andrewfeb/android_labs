@@ -2,6 +2,7 @@ package com.example.retrofit.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -20,15 +22,24 @@ import com.example.retrofit.AlertFragment;
 import com.example.retrofit.EditActivity;
 import com.example.retrofit.MainActivity;
 import com.example.retrofit.R;
+import com.example.retrofit.models.ListUser;
 import com.example.retrofit.models.User;
+import com.example.retrofit.services.ApiClient;
+import com.example.retrofit.services.UserService;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> implements AlertFragment.OnAlertListener {
-    private final List<User> dataUser;
-    private final AppCompatActivity context;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-    public UserAdapter(AppCompatActivity context, List<User> dataUser) {
+public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> implements AlertFragment.AlertListener {
+    private final ArrayList<User> dataUser;
+    private final AppCompatActivity context;
+    private User user;
+
+    public UserAdapter(AppCompatActivity context, ArrayList<User> dataUser) {
         this.context = context;
         this.dataUser = dataUser;
     }
@@ -36,17 +47,17 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> im
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_user, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_user, parent, false);
 
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        User user = dataUser.get(position);
+        user = dataUser.get(position);
         holder.tvName.setText(String.format("%s %s", user.getFirstName(), user.getLastName()));
         holder.tvEmail.setText(user.getEmail());
-        Glide.with(holder.itemView.getContext())
+        Glide.with(context)
                 .load(user.getAvatar())
                 .into(holder.imgAvatar);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -60,7 +71,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> im
         holder.btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DialogFragment alertFragment = new AlertFragment();
+                AlertFragment alertFragment = new AlertFragment();
+                alertFragment.setListener(UserAdapter.this);
+
                 alertFragment.show(context.getSupportFragmentManager(), "alert");
             }
         });
@@ -72,8 +85,21 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> im
     }
 
     @Override
-    public void onPositiveButtonClicked() {
-        Toast.makeText(context, "Delete Alert", Toast.LENGTH_SHORT).show();
+    public void clickAlertOk() {
+        UserService userService = ApiClient.getInstance().create(UserService.class);
+        Call<User> deleteUser = userService.deleteUser(user.getId());
+
+        deleteUser.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                Toast.makeText(context, "Delete successfully", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                Toast.makeText(context, "Delete is failed", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

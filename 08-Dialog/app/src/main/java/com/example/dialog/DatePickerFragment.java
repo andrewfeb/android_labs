@@ -37,9 +37,9 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
     @Override
     public void onDateSet(DatePicker datePicker, int year, int monthOfYear, int dayOfMonth) {
         calendar.set(Calendar.YEAR, year);
-        calendar.set(Calendar.MONTH, monthOfYear);
+        calendar.set(Calendar.MONTH, monthOfYear + 1);
         calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-        String date = dayOfMonth + "-" + monthOfYear + "-" + year;
+        String date = dayOfMonth + "-" + (monthOfYear + 1) + "-" + year;
 
         editText.setText(date);
     }

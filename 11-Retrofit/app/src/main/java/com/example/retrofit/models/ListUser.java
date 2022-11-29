@@ -2,7 +2,7 @@ package com.example.retrofit.models;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class ListUser {
     @SerializedName("page")
@@ -18,7 +18,7 @@ public class ListUser {
     private int totalPages;
 
     @SerializedName("data")
-    private List<User> data;
+    private ArrayList<User> data;
 
     public int getPage() {
         return page;
@@ -52,11 +52,11 @@ public class ListUser {
         this.totalPages = totalPages;
     }
 
-    public List<User> getData() {
+    public ArrayList<User> getData() {
         return data;
     }
 
-    public void setData(List<User> data) {
+    public void setData(ArrayList<User> data) {
         this.data = data;
     }
 }

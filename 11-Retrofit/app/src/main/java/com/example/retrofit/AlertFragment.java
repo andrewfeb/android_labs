@@ -3,6 +3,7 @@ package com.example.retrofit;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -10,10 +11,18 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
+import com.example.retrofit.adapters.UserAdapter;
+
 public class AlertFragment extends DialogFragment {
 
-    public interface OnAlertListener{
-        void onPositiveButtonClicked();
+    private AlertListener listener;
+
+    public void setListener(AlertListener listener) {
+        this.listener = listener;
+    }
+
+    public interface AlertListener {
+        void clickAlertOk();
     }
 
     @NonNull
@@ -26,12 +35,10 @@ public class AlertFragment extends DialogFragment {
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(getActivity(), "Clicked OK", Toast.LENGTH_SHORT).show();
-                        OnAlertListener listener = (OnAlertListener) getActivity();
                         if (listener != null) {
-                            listener.onPositiveButtonClicked();
+                            listener.clickAlertOk();
                         }
-                        //Toast.makeText(getActivity(), "How to use dialog in Android", Toast.LENGTH_SHORT).show();
+                        dismiss();
                     }
                 })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
