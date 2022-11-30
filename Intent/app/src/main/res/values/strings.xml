@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">Intent</string>
-    <string name="guest_books">Guest Books</string>
-    <string name="about">About</string>
-    <string name="send">Send</string>
-    <string name="name">Name</string>
-    <string name="hp">HP</string>
-    <string name="email">Email</string>
-</resources>
